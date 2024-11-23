@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger Details</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url("https://t3.ftcdn.net/jpg/07/18/32/82/240_F_718328252_MW48xxkicPLUHzvCkZyyCm20xa6jOJ5s.jpg") no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .burger-details {
+            background: rgba(255, 255, 255, 0.9); /* Transparent background */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+        }
+        .burger-details img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .burger-details h1 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .burger-details p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        .burger-details span {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ff4500;
+        }
+        .burger-details a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .burger-details a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="burger-details">
+        <img src="https://img.freepik.com/free-photo/grilled-beef-burger-with-fries-cheese-tomato-generative-ai_188544-8466.jpg?ga=GA1.1.260587315.1723889244&semt=ais_hybrid" alt="Juicy Burger">
+        <h1>Juicy Burger</h1>
+        <p>
+            The Juicy Burger is made with 100% fresh beef, grilled to perfection, and topped with melted cheese, crispy lettuce, 
+            and a tangy sauce. Perfect for satisfying your cravings! 🍔
+        </p>
+        <p>Price: <span>$5.99</span></p>
+        <a href="{% url 'order_now' 'Juicy Burger' %}" class="order-btn">Order Now</a>
+
+        <a href="{% url 'order_view' %}">Back to Home</a>
+    </div>
+</body>
+</html>

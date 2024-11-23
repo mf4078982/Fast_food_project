@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Order List</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            background-image: url('https://plus.unsplash.com/premium_photo-1679582754394-f923d24d3554?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Replace with your desired image URL */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .food-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .food-item {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            width: 300px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .food-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .food-details {
+            padding: 15px;
+            text-align: center;
+        }
+        .food-details h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #444;
+        }
+        .food-details p {
+            font-size: 1rem;
+            color: #666;
+            margin: 10px 0;
+        }
+        .food-details a,
+        .food-details .order-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ff6347;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            margin-top: 10px;
+            transition: background 0.3s ease;
+        }
+        .food-details a:hover,
+        .food-details .order-btn:hover {
+            background-color: #ff4500;
+        }
+    </style>
+    <script>
+        function orderFood(foodName) {
+            alert(`Thank you for your order of ${foodName}! Your order has been placed.`);
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Order Your Favorite Food</h1>
+        <div class="food-list">
+            <!-- Food Item 1 -->
+            <div class="food-item">
+                <img src="https://media.istockphoto.com/id/2061716709/photo/grilled-rib-burger.webp?a=1&b=1&s=612x612&w=0&k=20&c=OeRKfT736HFidM_TmreA8T8XRgzCs7vjVKx-uzJdRgE=" alt="Burger">
+                <div class="food-details">
+                    <h3>Juicy Burger</h3>
+                    <p>A delicious burger with fresh ingredients.🥰</p>
+                    <a href="{% url 'burgar' 'Juicy Burger' %}">View Details</a>
+                    <a href="{% url 'order_now' 'Juicy Burger' %}" class="order-btn">Order Now</a>
+
+
+                </div>
+            </div>
+            <!-- Food Item 2 -->
+            <div class="food-item">
+                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1381&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Pizza">
+                <div class="food-details">
+                    <h3>Cheesy Pizza</h3>
+                    <p>Loaded with cheese and your favorite toppings.🥰</p>
+                    <a href="{% url 'pizza' 'pizza' %}">View Details</a>
+                    <a href="{% url 'order_now' 'Cheesy pizza' %}" class="order-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Food Item 3 -->
+            <div class="food-item">
+                <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDIyfHx8ZW58MHx8fHx8" alt="Pasta">
+                <div class="food-details">
+                    <h3>Italian Pasta</h3>
+                    <p>Rich and creamy pasta to delight your taste buds.🥰</p>
+                    <a href="{% url 'pasta' 'pasta' %}">View Details</a>
+                    <a href="{% url 'order_now' 'Italian Pasta' %}" class="order-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Food Item 4 -->
+            <div class="food-item">
+                <img src="https://media.istockphoto.com/id/1348719614/photo/sweet-potato-fries-with-sauces.jpg?s=1024x1024&w=is&k=20&c=UGoNAq48GkbrEiiyC0373P8a2_D2_McU89g_01EWNBE=" alt="Fries">
+                <div class="food-details">
+                    <h3>Crispy Fries</h3>
+                    <p>Perfectly seasoned and fried to golden perfection.🥰</p>
+                    <a href="{% url 'fries' 'fries' %}">View Details</a>
+                    <a href="{% url 'order_now'  'Crispy Fries' %}" class="order-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Food Item 5 -->
+            <div class="food-item">
+                <img src="https://media.istockphoto.com/id/1430060185/photo/sweet-tasty-fried-indian-dish-samosha-indian-delicious-deep-fried-breakfast-samosa-also-know.jpg?s=1024x1024&w=is&k=20&c=Du9Bw6yYeFToSu2k-9TveuX-jQBAylfKWDKsZUJDaYA=" alt="Samosa">
+                <div class="food-details">
+                    <h3>Crispy Samosa</h3>
+                    <p>A triangular fried pastry filled with spiced potatoes🥰</p>
+                    <a href="{% url 'samosa' 'samosa' %}">View Details</a>
+                    <a href="{% url 'order_now' 'Crispy Samosa' %}" class="order-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Food Item 6 -->
+            <div class="food-item">
+                <img src="https://media.istockphoto.com/id/1682708971/photo/grilled-chicken-wings-with-spices-at-black-table.jpg?s=1024x1024&w=is&k=20&c=hR2QV53dtR72fOovkKoJyTQWFOFlpY6QvZ3nChkWVPE=" alt="Chicken Leg">
+                <div class="food-details">
+                    
+                            <h3>Chicken Leg</h3>
+                            <p>The chicken leg piece🥰</p>
+                            <a href="chicken-leg-details.html">View Details</a>
+                            <a href="{% url 'order_now' 'Chicken leg' %}" class="order-btn">Order Now</a>
+
+
+                        </div>
+                    </div>
+                    
+            </div>
+        </div>
+    </div>
+</body>
+</html>

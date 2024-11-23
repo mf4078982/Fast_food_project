@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Now</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url("https://images.unsplash.com/photo-1569917761875-e2897cee7d80?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .order-form {
+            background: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        .order-form h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .order-form img {
+            display: block;
+            margin: 0 auto 20px;
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .order-form .form-group {
+            margin-bottom: 15px;
+        }
+        .order-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        .order-form input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .order-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ff6347;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        .order-form button:hover {
+            background-color: #ff4500;
+        }
+        .success-message {
+            text-align: center;
+            margin-top: 15px;
+            color: green;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <form method="post" class="order-form">
+        {% csrf_token %}
+        {% if success %}
+            <div class="success-message">
+                Your order is submitted successfully!
+            </div>
+        {% endif %}
+        <h2>Order {{ food_name }}</h2>
+        <img src="{{ food_image }}" alt="Food Image">
+        {{ form.as_p }}
+        <div class="div row">
+            <button type="submit" class="btn btn-info">Submit</button>
+            <a href="{% url 'order_view' %}" class="order-btn">Back page</a>
+
+        </div>
+
+    
+    </form>
+    
+</body>
+</html>

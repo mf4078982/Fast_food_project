@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samosa Details</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url("https://www.shutterstock.com/image-photo/indian-traditional-food-samosa-snacks-260nw-1750320310.jpg") no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .samosa-details {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+        }
+        .samosa-details img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .samosa-details h1 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .samosa-details p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        .samosa-details span {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #d32f2f;
+        }
+        .samosa-details a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            background-color: #6c757d;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .samosa-details a:hover {
+            background-color: #495057;
+        }
+    </style>
+</head>
+<body>
+    <div class="samosa-details">
+        <img src="https://img.freepik.com/free-photo/indian-traditional-snack-samosa-served_123827-20830.jpg" alt="Delicious Samosa">
+        <h1>Spicy Crispy Samosa</h1>
+        <p>
+            Relish our freshly prepared samosas filled with flavorful potatoes and spices. Perfect for tea-time or snacking! 🥟
+        </p>
+        <p>Price: <span>$2.99</span></p>
+        <a href="{% url 'order_now' 'Spicy Crispy Samosa' %}" class="order-btn">Order Now</a>
+        <a href="{% url 'order_view' %}">Back to Home</a>
+    </div>
+</body>
+</html>

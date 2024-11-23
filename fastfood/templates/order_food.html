@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order {{ food_name }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            padding: 20px;
+            text-align: center;
+        }
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+        p {
+            margin: 15px 0;
+            font-size: 16px;
+            color: #555;
+        }
+        form {
+            margin-top: 20px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        a {
+            display: inline-block;
+            margin-top: 15px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% if order_placed %}
+            <h1>Thank you for ordering {{ food_name }}!</h1>
+            <p>Your order has been placed successfully.</p>
+            <img src="{{ food_image }}" alt="{{ food_name }}">
+            <a href="/">Go Back</a>
+        {% else %}
+            <h1>Order {{ food_name }}</h1>
+            <img src="{{ food_image }}" alt="{{ food_name }}">
+            <p>{{ description }}</p>
+            <form method="post">
+                {% csrf_token %}
+                <button type="submit">Order Now</button>
+            </form>
+            <a href="/">Go Back</a>
+        {% endif %}
+    </div>
+</body>
+</html>

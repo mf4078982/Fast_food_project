@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fries Details</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url("https://www.shutterstock.com/image-photo/french-fries-paper-box-on-260nw-1112118748.jpg") no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .fries-details {
+            background: rgba(255, 255, 255, 0.9); /* Transparent background */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+        }
+        .fries-details img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .fries-details h1 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .fries-details p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        .fries-details span {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ff9800;
+        }
+        .fries-details a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            background-color: #6c757d;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .fries-details a:hover {
+            background-color: #495057;
+        }
+    </style>
+</head>
+<body>
+    <div class="fries-details">
+        <img src="https://media.istockphoto.com/id/1348719614/photo/sweet-potato-fries-with-sauces.jpg?s=1024x1024&w=is&k=20&c=UGoNAq48GkbrEiiyC0373P8a2_D2_McU89g_01EWNBE=" alt="Delicious Fries">
+        <h1>Golden Crispy Fries</h1>
+        <p>
+            Treat yourself to our perfectly crispy fries, seasoned to perfection. Served with your choice of dips! 🍟
+        </p>
+        <p>Price: <span>$3.99</span></p>
+        <a href="{% url 'order_now' 'Golden Crispy Fries' %}" class="order-btn">Order Now</a>
+        <a href="{% url 'order_view' %}">Back to Home</a>
+    </div>
+</body>
+</html>
