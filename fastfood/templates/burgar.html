@@ -8,7 +8,8 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background: url("https://t3.ftcdn.net/jpg/07/18/32/82/240_F_718328252_MW48xxkicPLUHzvCkZyyCm20xa6jOJ5s.jpg") no-repeat center center fixed;
+            background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                        url("https://t3.ftcdn.net/jpg/07/18/32/82/240_F_718328252_MW48xxkicPLUHzvCkZyyCm20xa6jOJ5s.jpg") no-repeat center center fixed;
             background-size: cover;
             margin: 0;
             padding: 0;
@@ -16,48 +17,61 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            color: #fff;
         }
         .burger-details {
-            background: rgba(255, 255, 255, 0.9); /* Transparent background */
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
             max-width: 500px;
             width: 90%;
             text-align: center;
+            border: 2px solid #007BFF;
         }
         .burger-details img {
             width: 100%;
-            border-radius: 10px;
+            border-radius: 15px;
             margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .burger-details img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
         }
         .burger-details h1 {
-            font-size: 2rem;
-            color: #333;
-            margin-bottom: 10px;
+            font-size: 2.4rem;
+            color: #007BFF;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
         }
         .burger-details p {
             font-size: 1rem;
-            color: #555;
+            color: #333;
+            line-height: 1.5;
             margin-bottom: 15px;
         }
         .burger-details span {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             font-weight: bold;
-            color: #ff4500;
+            color: #28a745;
         }
         .burger-details a {
             display: inline-block;
             margin-top: 20px;
             text-decoration: none;
-            background-color: #007BFF;
+            background: linear-gradient(to right, #007BFF, #0056b3);
             color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 12px 25px;
+            border-radius: 50px;
             font-size: 1rem;
+            transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
         }
         .burger-details a:hover {
-            background-color: #0056b3;
+            background: linear-gradient(to right, #0056b3, #007BFF);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
         }
     </style>
 </head>
@@ -71,8 +85,7 @@
         </p>
         <p>Price: <span>$5.99</span></p>
         <a href="{% url 'order_now' 'Juicy Burger' %}" class="order-btn">Order Now</a>
-
-        <a href="{% url 'order_view' %}">Back to Home</a>
+        <a href="{% url 'order_view' %}" class="order-btn">Back to Home</a>
     </div>
 </body>
 </html>

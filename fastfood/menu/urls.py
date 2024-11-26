@@ -11,6 +11,8 @@ urlpatterns = [
     path('pasta/<str:pasta_name>/', views.pasta, name='pasta'),
     path('fries/<str:fries_name>/', views.fries, name='fries'),
     path('samosa/<str:samosa_name>/', views.samosa,name='samosa'),
-    
+    path('content/', views.content, name='content'),
+    path('chicken/<str:food_item>/', views.chicken_view, name='chicken'),
+
      
 ]

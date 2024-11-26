@@ -8,7 +8,8 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background: url("https://media.istockphoto.com/id/1418721543/photo/healthy-food-concept.jpg?s=612x612&w=0&k=20&c=RmxkUMISbS1jyBACwDbkph-cbiCVfIgR7iPRlX19tYo=") no-repeat center center fixed;
+            background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                        url("https://media.istockphoto.com/id/1418721543/photo/healthy-food-concept.jpg?s=612x612&w=0&k=20&c=RmxkUMISbS1jyBACwDbkph-cbiCVfIgR7iPRlX19tYo=") no-repeat center center fixed;
             background-size: cover;
             margin: 0;
             padding: 0;
@@ -16,48 +17,61 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            color: #fff;
         }
         .pizza-details {
-            background: rgba(255, 255, 255, 0.9); /* Transparent background */
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
             max-width: 500px;
             width: 90%;
             text-align: center;
+            border: 2px solid #ff4500;
         }
         .pizza-details img {
             width: 100%;
-            border-radius: 10px;
+            border-radius: 15px;
             margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .pizza-details img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
         }
         .pizza-details h1 {
-            font-size: 2rem;
-            color: #333;
-            margin-bottom: 10px;
+            font-size: 2.4rem;
+            color: #ff4500;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
         }
         .pizza-details p {
             font-size: 1rem;
-            color: #555;
+            color: #333;
+            line-height: 1.5;
             margin-bottom: 15px;
         }
         .pizza-details span {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             font-weight: bold;
-            color: #ff4500;
+            color: #28a745;
         }
         .pizza-details a {
             display: inline-block;
             margin-top: 20px;
             text-decoration: none;
-            background-color: #28a745;
+            background: linear-gradient(to right, #ff4500, #ff7300);
             color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 12px 25px;
+            border-radius: 50px;
             font-size: 1rem;
+            transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
         }
         .pizza-details a:hover {
-            background-color: #218838;
+            background: linear-gradient(to right, #ff7300, #ff4500);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
         }
     </style>
 </head>
@@ -71,8 +85,7 @@
         </p>
         <p>Price: <span>$9.99</span></p>
         <a href="{% url 'order_now' 'Cheesy Delight Pizza' %}" class="order-btn">Order Now</a>
-
-        <a href="{% url 'order_view' %}">Back to Home</a>
+        <a href="{% url 'order_view' %}" class="order-btn">Back to Home</a>
     </div>
 </body>
 </html>

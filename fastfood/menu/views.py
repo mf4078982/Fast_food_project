@@ -74,3 +74,11 @@ def fries(request,fries_name):
 
 def samosa(request,samosa_name):
     return render(request,'samosa.html')
+
+def content(request):
+    return render(request, 'content.html')
+
+
+
+def chicken_view(request, food_item):
+    return render(request, 'chicken.html')

@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Order List</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -17,19 +18,19 @@
             background-attachment: fixed;
         }
         .container {
-            max-width: 1200px;
+            max-width: 12000px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 100px;
         }
         h1 {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             color: #333;
         }
         .food-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 30px;
             justify-content: center;
         }
         .food-item {
@@ -37,12 +38,12 @@
             border: 1px solid #ddd;
             border-radius: 8px;
             overflow: hidden;
-            width: 300px;
+            width: 350px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         .food-item img {
             width: 100%;
-            height: 200px;
+            height: 250px;
             object-fit: cover;
         }
         .food-details {
@@ -56,7 +57,7 @@
         }
         .food-details p {
             font-size: 1rem;
-            color: #666;
+            color: #666666;
             margin: 10px 0;
         }
         .food-details a,
@@ -92,8 +93,8 @@
                 <div class="food-details">
                     <h3>Juicy Burger</h3>
                     <p>A delicious burger with fresh ingredients.🥰</p>
-                    <a href="{% url 'burgar' 'Juicy Burger' %}">View Details</a>
-                    <a href="{% url 'order_now' 'Juicy Burger' %}" class="order-btn">Order Now</a>
+                    <a href="{% url 'burgar' 'Juicy Burger' %}" class="btn btn-outline-success shadow">View Details</a>
+                    <a href="{% url 'order_now' 'Juicy Burger' %}" class="btn btn-outline-info shadow">Order Now</a>
 
 
                 </div>
@@ -104,8 +105,8 @@
                 <div class="food-details">
                     <h3>Cheesy Pizza</h3>
                     <p>Loaded with cheese and your favorite toppings.🥰</p>
-                    <a href="{% url 'pizza' 'pizza' %}">View Details</a>
-                    <a href="{% url 'order_now' 'Cheesy pizza' %}" class="order-btn">Order Now</a>
+                    <a href="{% url 'pizza' 'pizza' %}" class="btn btn-outline-success">View Details</a>
+                    <a href="{% url 'order_now' 'Cheesy pizza' %}" class="btn btn-outline-info shadow">Order Now</a>
                 </div>
             </div>
             <!-- Food Item 3 -->
@@ -114,8 +115,8 @@
                 <div class="food-details">
                     <h3>Italian Pasta</h3>
                     <p>Rich and creamy pasta to delight your taste buds.🥰</p>
-                    <a href="{% url 'pasta' 'pasta' %}">View Details</a>
-                    <a href="{% url 'order_now' 'Italian Pasta' %}" class="order-btn">Order Now</a>
+                    <a href="{% url 'pasta' 'pasta' %}" class="btn btn-outline-success">View Details</a>
+                    <a href="{% url 'order_now' 'Italian Pasta' %}" class="btn btn-outline-info shadow">Order Now</a>
                 </div>
             </div>
             <!-- Food Item 4 -->
@@ -124,8 +125,8 @@
                 <div class="food-details">
                     <h3>Crispy Fries</h3>
                     <p>Perfectly seasoned and fried to golden perfection.🥰</p>
-                    <a href="{% url 'fries' 'fries' %}">View Details</a>
-                    <a href="{% url 'order_now'  'Crispy Fries' %}" class="order-btn">Order Now</a>
+                    <a href="{% url 'fries' 'fries' %}" class="btn btn-outline-success">View Details</a>
+                    <a href="{% url 'order_now'  'Crispy Fries' %}" class="btn btn-outline-info shadow">Order Now</a>
                 </div>
             </div>
             <!-- Food Item 5 -->
@@ -134,8 +135,8 @@
                 <div class="food-details">
                     <h3>Crispy Samosa</h3>
                     <p>A triangular fried pastry filled with spiced potatoes🥰</p>
-                    <a href="{% url 'samosa' 'samosa' %}">View Details</a>
-                    <a href="{% url 'order_now' 'Crispy Samosa' %}" class="order-btn">Order Now</a>
+                    <a href="{% url 'samosa' 'samosa' %}" class="btn btn-outline-success">View Details</a>
+                    <a href="{% url 'order_now' 'Crispy Samosa' %}" class="btn btn-outline-info shadow">Order Now</a>
                 </div>
             </div>
             <!-- Food Item 6 -->
@@ -145,8 +146,9 @@
                     
                             <h3>Chicken Leg</h3>
                             <p>The chicken leg piece🥰</p>
-                            <a href="chicken-leg-details.html">View Details</a>
-                            <a href="{% url 'order_now' 'Chicken leg' %}" class="order-btn">Order Now</a>
+                            <a href="{% url 'chicken' 'Chicken Leg' %}" class="btn btn-outline-success shadow">View Details</a>
+                            <a href="{% url 'order_now' 'Chicken leg' %}" class="btn btn-outline-info shadow">Order Now</a>
+
 
 
                         </div>
@@ -155,5 +157,7 @@
             </div>
         </div>
     </div>
+
+    
 </body>
 </html>

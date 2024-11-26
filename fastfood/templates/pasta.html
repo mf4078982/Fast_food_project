@@ -8,7 +8,8 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background: url("https://www.shutterstock.com/image-photo/spaghetti-on-fork-tomato-sauce-260nw-2477837279.jpg") no-repeat center center fixed;
+            background: linear-gradient(to bottom right, rgba(255, 140, 0, 0.6), rgba(255, 90, 54, 0.6)),
+                        url("https://www.shutterstock.com/image-photo/spaghetti-on-fork-tomato-sauce-260nw-2477837279.jpg") no-repeat center center fixed;
             background-size: cover;
             margin: 0;
             padding: 0;
@@ -18,46 +19,57 @@
             height: 100vh;
         }
         .pasta-details {
-            background: rgba(255, 255, 255, 0.9); /* Transparent background */
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
             max-width: 500px;
             width: 90%;
             text-align: center;
+            border: 2px solid #e63946;
         }
         .pasta-details img {
             width: 100%;
-            border-radius: 10px;
+            border-radius: 12px;
             margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+        .pasta-details img:hover {
+            transform: scale(1.05);
         }
         .pasta-details h1 {
-            font-size: 2rem;
-            color: #333;
-            margin-bottom: 10px;
+            font-size: 2.2rem;
+            color: #e63946;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
         }
         .pasta-details p {
             font-size: 1rem;
-            color: #555;
+            color: #333;
+            line-height: 1.5;
             margin-bottom: 15px;
         }
         .pasta-details span {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             font-weight: bold;
-            color: #e63946;
+            color: #6a1b9a;
         }
         .pasta-details a {
             display: inline-block;
             margin-top: 20px;
             text-decoration: none;
-            background-color: #6c757d;
+            background: linear-gradient(to right, #e63946, #ff8c00);
             color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 12px 25px;
+            border-radius: 50px;
             font-size: 1rem;
+            transition: background 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
         }
         .pasta-details a:hover {
-            background-color: #495057;
+            background: linear-gradient(to right, #ff8c00, #e63946);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
@@ -71,7 +83,6 @@
         </p>
         <p>Price: <span>$7.99</span></p>
         <a href="{% url 'order_now' 'Spaghetti Marinara' %}" class="order-btn">Order Now</a>
-
         <a href="{% url 'order_view' %}">Back to Home</a>
     </div>
 </body>
