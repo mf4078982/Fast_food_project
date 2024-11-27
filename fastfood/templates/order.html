@@ -60,23 +60,31 @@
             color: #666666;
             margin: 10px 0;
         }
+
+        /* Updated Stylish Buttons */
         .food-details a,
         .food-details .order-btn {
             display: inline-block;
-            padding: 10px 20px;
+            padding: 12px 25px;
             background-color: #ff6347;
             color: #fff;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 8px;
             font-size: 1rem;
             margin-top: 10px;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border: 2px solid transparent;
         }
+
         .food-details a:hover,
         .food-details .order-btn:hover {
             background-color: #ff4500;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+            transform: translateY(-3px);
+            border: 2px solid #ff6347;
         }
-    </style>
+        </style>
     <script>
         function orderFood(foodName) {
             alert(`Thank you for your order of ${foodName}! Your order has been placed.`);
