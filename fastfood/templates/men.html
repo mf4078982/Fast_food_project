@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fast Food Hub</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -18,77 +17,75 @@
             background-color: #f4f4f4;
         }
         header {
-            background: url('https://i.pinimg.com/736x/f9/78/68/f97868c27aa4e854e26497c7f504c6ff.jpg') no-repeat center center/cover;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), 
+                        url('https://i.pinimg.com/736x/f9/78/68/f97868c27aa4e854e26497c7f504c6ff.jpg') no-repeat center center/cover;
             height: 100vh;
             color: #fff;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 0 30px;
+            position: relative;
         }
         .header-content {
             max-width: 50%;
+            animation: fadeIn 2s ease-in-out;
         }
         header h1 {
-            font-size: 4rem;
+            font-size: 4.5rem;
             margin: 0;
+            font-weight: bold;
+            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7);
         }
         header p {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             margin-top: 20px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
         }
         header a {
-            background-color: #ff6347;
-            padding: 15px 30px;
+            background: linear-gradient(to right, #ff6347, #ff4500);
+            padding: 15px 40px;
             text-decoration: none;
             color: white;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             margin-top: 30px;
-            border-radius: 5px;
+            border-radius: 50px;
             display: inline-block;
+            box-shadow: 0 10px 20px rgba(255, 69, 0, 0.4);
+            transition: all 0.4s ease-in-out;
+            font-weight: bold;
         }
         header a:hover {
-            background-color: #ff4500;
+            background: linear-gradient(to right, #ff4500, #ff6347);
+            transform: scale(1.1) translateY(-3px);
+            box-shadow: 0 15px 25px rgba(255, 69, 0, 0.6);
         }
         .burger-image {
             max-width: 40%;
             height: auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 2s ease-out;
         }
-        .about-section {
-            padding: 40px 20px 20px; /* Adjusted bottom padding */
-            text-align: center;
-            background-color: #fff;
-            color: #333;
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        .about-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-        .about-section p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .apps-section {
-            padding: 10px; /* Reduced padding for closer spacing */
-            text-align: center;
-            background-color: #333;
-            color: #fff;
-        }
-        .apps-section h2 {
-            font-size: 2rem;
-            margin-bottom: 15px;
-        }
-        .apps-section a {
-            color: #fff;
-            font-size: 1.5rem;
-            margin: 0 15px;
-            text-decoration: none;
-            display: inline-block;
-            transition: color 0.3s ease;
-        }
-        .apps-section a:hover {
-            color: #ff6347;
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         footer {
             background-color: #333;
@@ -105,14 +102,17 @@
             <h1>Fast Food Hub</h1>
             <p>Your favorite meals delivered quickly!</p>
             
-            <a href="{% url 'order_view' %}" class="btn btn-outline-danger shadow-lg">Order Now</a>
+            <a href="{% url 'order_view' %}" class="btn btn-outline-darkSS shadow-lg">
+                <i class="fas fa-utensils"></i> Order Now
+            </a>
 
         </div>
         <img src="https://img.freepik.com/free-photo/grilled-beef-burger-with-fries-cheese-tomato-generative-ai_188544-8466.jpg?ga=GA1.1.260587315.1723889244&semt=ais_hybrid" alt="Burger Image" class="burger-image">
     </header>
 
-    
-    <!-- Apps Section -->
+    <footer>
+        &copy; 2024 Fast Food Hub. All rights reserved.
+    </footer>
 
 </body>
 </html>

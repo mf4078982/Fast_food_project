@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* General Body Styling */
+        body {
+            background-image: url('https://as2.ftcdn.net/v2/jpg/06/78/26/57/1000_F_678265734_rExxOpylIBfwm4ZjrwINmCZB7uYOVaH5.jpg'); /* Background image */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Poppins', sans-serif; /* Modern font */
+            color: #fff;
+        }
+
+        /* Container Styling */
+        .container {
+            background-color: rgba(0, 0, 0, 0.85); /* Dark translucent background */
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 50px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s ease-in-out; /* Subtle fade-in animation */
+        }
+
+        /* Header Styling */
+        h1 {
+            color: #f1c40f; /* Gold color */
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        /* Button Styling */
+        .btn-custom {
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .btn-custom:hover {
+            transform: scale(1.1); /* Grow effect on hover */
+        }
+
+        .btn-primary {
+            background-color: #f1c40f;
+            color: #000;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #d4ac0d; /* Darker gold */
+            color: #fff;
+        }
+
+        .btn-warning {
+            background-color: #e67e22; /* Orange */
+            border: none;
+        }
+
+        .btn-warning:hover {
+            background-color: #d35400; /* Darker orange */
+        }
+
+        .btn-danger {
+            background-color: #e74c3c; /* Red */
+            border: none;
+        }
+
+        .btn-danger:hover {
+            background-color: #c0392b; /* Darker red */
+        }
+
+        /* Table Styling */
+        table {
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        th {
+            background-color: #212529; /* Dark header background */
+            color: #fff;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        td {
+            text-align: center;
+            vertical-align: middle;
+            font-size: 1rem;
+            color: #000;
+        }
+
+        /* Table Hover Effect */
+        tbody tr:hover {
+            background-color: #f7f7f7;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .btn {
+                font-size: 0.8rem;
+                padding: 0.4rem 0.6rem;
+            }
+
+            td, th {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Fade-in Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Menu</h1>
+        <div class="text-end mb-4">
+            <a href="{% url 'add_item' %}" class="btn btn-primary btn-lg btn-custom">+ Add New Item</a>
+        </div>
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.category }}</td>
+                    <td>${{ item.price }}</td>
+                    <td>
+                        <a href="{% url 'edit_item' item.pk %}" class="btn btn-warning btn-sm btn-custom">Edit</a>
+                        <form action="{% url 'delete_item' item.pk %}" method="POST" style="display:inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger btn-sm btn-custom">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
