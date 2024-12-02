@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Order List</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href = "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     
     <style>
         body {
@@ -89,12 +89,14 @@
         function orderFood(foodName) {
             alert(`Thank you for your order of ${foodName}! Your order has been placed.`);
         }
+
+
     </script>
 </head>
 <body>
     
     <div class="container">
-        <a href="{% url 'menu_list' %}" class="btn btn-outline-success ">+ create new item</a>
+        
         <h1>Order Your Favorite Food</h1>
         
         <div class="food-list">
@@ -158,6 +160,7 @@
                     
                             <h3>Chicken Leg</h3>
                             <p>The chicken leg piece🥰</p>
+                            
                             <a href="{% url 'chicken' 'Chicken Leg' %}" class="btn btn-outline-success shadow">View Details</a>
                             <a href="{% url 'order_now' 'Chicken leg' %}" class="btn btn-outline-info shadow">Order Now</a>
 
@@ -165,11 +168,14 @@
 
                         </div>
                     </div>
+
                     
             </div>
         </div>
     </div>
 
+
     
+
 </body>
 </html>

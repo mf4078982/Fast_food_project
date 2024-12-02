@@ -15,7 +15,6 @@ def order_view(request):
         form = OrderForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('success_page')  # Redirect to a success page after order
     else:
         form = OrderForm()
     return render(request, 'order.html', {'form': form})
